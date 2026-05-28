@@ -55,7 +55,11 @@ void install() {
     memset(block, 0, BLOCKSIZ);
     fseek(g_fd, DATASTART + g_cur_path_inode->di_addr[0] * BLOCKSIZ, SEEK_SET);
     fread(block, BLOCKSIZ, 1, g_fd);
-    memcpy(&g_dir, block, sizeof(dir));
+    memset(&g_dir, 0, sizeof(g_dir));
+    int n = g_cur_path_inode->di_size / sizeof(direct);
+    if (n > (int)(BLOCKSIZ / sizeof(direct))) n = BLOCKSIZ / sizeof(direct);
+    memcpy(g_dir.direct, block, n * sizeof(direct));
+    g_dir.size = n;
   }
 
   g_user_id = -1;

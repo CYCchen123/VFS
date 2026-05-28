@@ -88,6 +88,7 @@ set(TEST_SOURCES
     test/test_balloc_bfree.cpp
     test/test_ifree.cpp
     test/test_login.cpp
+    test/test_inode_dir.cpp
 )
 
 add_executable(vfs_test ${VFS_LIB_SOURCES} ${TEST_SOURCES})
