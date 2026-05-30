@@ -89,6 +89,7 @@ set(TEST_SOURCES
     test/test_balloc_bfree.cpp
     test/test_ifree.cpp
     test/test_login.cpp
+    test/test_inode_dir.cpp
     test/test_error.cpp
 )
 

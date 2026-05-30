@@ -46,7 +46,9 @@
       "Bash(where clangd *)",
       "Bash(clangd --version)",
       "Bash(clangd --check=\"user/shell.cpp\")",
-      "Bash(where ninja *)"
+      "Bash(where ninja *)",
+      "Bash(cmake *)",
+      "Bash(./build/vfs_test *)"
     ]
   }
 }
